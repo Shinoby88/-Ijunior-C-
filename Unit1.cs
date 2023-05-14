@@ -10,26 +10,26 @@ namespace ConsoleApp6
     {
         static void Main(string[] args)
         {
-            byte first = 0;
-            sbyte second = -128;
-            short third = 4;
-            int fourth = 3;
-            uint fifth = 4000000000;
-            float sixth = 2.0f;
-            string seventh = "Всем Привет";
-            long eighth = -900000;
-            ulong ninth = 345;
-            char tenth = 'd';
-            Console.WriteLine(first);
-            Console.WriteLine(second);
-            Console.WriteLine(third);
-            Console.WriteLine(fourth);
-            Console.WriteLine(fifth);
-            Console.WriteLine(sixth);
-            Console.WriteLine(seventh);
-            Console.WriteLine(eighth);
-            Console.WriteLine(ninth);
-            Console.WriteLine(tenth);
+            byte petrol = 0;
+            sbyte credit = -128;
+            short unit = 4;
+            int ships = 3;
+            uint gold = 4000000000;
+            float coordinates = 2.0f;
+            string str1 = "Всем Привет";
+            long credit2 = -900000;
+            ulong metall = 345;
+            char simbol = 'd';
+            Console.WriteLine("Количество бензина " + petrol);
+            Console.WriteLine("Деньги котрые должен отдать " + credit);
+            Console.WriteLine("Количество юнитов " + unit);
+            Console.WriteLine("Количество кораблей в порту " + ships);
+            Console.WriteLine("Количество золота " + gold);
+            Console.WriteLine("Координаты хз чего " + coordinates);
+            Console.WriteLine("Строка приветствия " + str1);
+            Console.WriteLine("Задолжность " + credit2);
+            Console.WriteLine("Количество металла " + metall);
+            Console.WriteLine("Символ " + simbol);
             Console.ReadKey();
         }
     }
