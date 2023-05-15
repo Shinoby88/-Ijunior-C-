@@ -10,27 +10,30 @@ namespace ConsoleApp6
     {
         static void Main(string[] args)
         {
-            byte petrol = 0;
-            sbyte credit = -128;
-            short unit = 4;
-            int ships = 3;
-            uint gold = 4000000000;
-            float coordinates = 2.0f;
-            string str1 = "Всем Привет";
-            long credit2 = -900000;
-            ulong metall = 345;
-            char simbol = 'd';
-            Console.WriteLine("Количество бензина " + petrol);
-            Console.WriteLine("Деньги котрые должен отдать " + credit);
-            Console.WriteLine("Количество юнитов " + unit);
-            Console.WriteLine("Количество кораблей в порту " + ships);
-            Console.WriteLine("Количество золота " + gold);
-            Console.WriteLine("Координаты хз чего " + coordinates);
-            Console.WriteLine("Строка приветствия " + str1);
-            Console.WriteLine("Задолжность " + credit2);
-            Console.WriteLine("Количество металла " + metall);
-            Console.WriteLine("Символ " + simbol);
-            Console.ReadKey();
+        // объявление и инициализация переменных
+        int integerValue = 10;
+        float floatValue = 2.5F;
+        double doubleValue = 3.14;
+        char charValue = 'A';
+        string stringValue = "Hello, World!";
+        bool booleanValue = true;
+        decimal decimalValue = 1234567890.987654321M;
+        byte byteValue = 255;
+        short shortValue = -32768;
+        long longValue = 9223372036854775807;
+
+        // вывод значений переменных в консоль
+        Console.WriteLine("int integerValue = " + integerValue);
+        Console.WriteLine("float floatValue = " + floatValue);
+        Console.WriteLine("double doubleValue = " + doubleValue);
+        Console.WriteLine("char charValue = " + charValue);
+        Console.WriteLine("string stringValue = " + stringValue);
+        Console.WriteLine("bool booleanValue = " + booleanValue);
+        Console.WriteLine("decimal decimalValue = " + decimalValue);
+        Console.WriteLine("byte byteValue = " + byteValue);
+        Console.WriteLine("short shortValue = " + shortValue);
+        Console.WriteLine("long longValue = " + longValue);
+
         }
     }
 }
