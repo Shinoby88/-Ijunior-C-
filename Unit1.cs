@@ -10,29 +10,28 @@ namespace ConsoleApp6
     {
         static void Main(string[] args)
         {
-        // объявление и инициализация переменных
-        int integerValue = 10;
-        float floatValue = 2.5F;
-        double doubleValue = 3.14;
-        char charValue = 'A';
-        string stringValue = "Hello, World!";
-        bool booleanValue = true;
-        decimal decimalValue = 1234567890.987654321M;
-        byte byteValue = 255;
-        short shortValue = -32768;
-        long longValue = 9223372036854775807;
-
-        // вывод значений переменных в консоль
-        Console.WriteLine("int integerValue = " + integerValue);
-        Console.WriteLine("float floatValue = " + floatValue);
-        Console.WriteLine("double doubleValue = " + doubleValue);
-        Console.WriteLine("char charValue = " + charValue);
-        Console.WriteLine("string stringValue = " + stringValue);
-        Console.WriteLine("bool booleanValue = " + booleanValue);
-        Console.WriteLine("decimal decimalValue = " + decimalValue);
-        Console.WriteLine("byte byteValue = " + byteValue);
-        Console.WriteLine("short shortValue = " + shortValue);
-        Console.WriteLine("long longValue = " + longValue);
+         byte litersPetrol = 0;
+         sbyte creditFirst = -128;
+         short units = 4;
+         int ships = 3;
+         uint goldBalance = 4000000000;
+         float coordinatesAxisY = 2.0f;
+         string nameHero = "Арагорн";
+         long creditSecond = -900000;
+         ulong metallQuantity = 345;
+         char zodiakSign = 'd';
+         Console.WriteLine("Количество бензина " + litersPetrol);
+         Console.WriteLine("Деньги котрые должен отдать " + creditFirst);
+         Console.WriteLine("Количество юнитов " + units);
+         Console.WriteLine("Количество кораблей в порту " + ships);
+         Console.WriteLine("Количество золота " + goldBalance);
+         Console.WriteLine("Координаты хз чего " + coordinatesAxisY);
+         Console.WriteLine("Как зовут героя" + nameHero);
+         Console.WriteLine("Задолжность " + creditSecond);
+         Console.WriteLine("Количество металла " + metallQuantity);
+         Console.WriteLine("Символ " + zodiakSign);
+         Console.ReadKey();
+        
 
         }
     }
