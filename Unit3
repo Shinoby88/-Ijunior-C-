@@ -10,12 +10,12 @@ namespace ConsoleApp11
     {
         static void Main(string[] args)
         {
-            int quantityPictures = 52;
-            int ranks = 3;
-            int picturesInRanks = quantityPictures / ranks;
-            int leftOutOfLine = quantityPictures % ranks;
+            int allPictures = 52;
+            int numberOfRows = 3;
+            int picturesInRanks = allPictures / numberOfRows;
+            int remainingPictures = allPictures % numberOfRows;
             Console.WriteLine("Количество картинок в трех рядах = " + picturesInRanks);
-            Console.WriteLine("Количество картинок оставшее вне ряда = " + leftOutOfLine);   
+            Console.WriteLine("Количество картинок оставшиеся вне ряда = " + remainingPictures);   
             Console.ReadKey();
 
         }
