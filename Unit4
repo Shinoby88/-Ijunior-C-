@@ -1,0 +1,29 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Security.Policy;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp14
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            int numberOne = 5;
+            int numberTwo = 10;
+            int result;
+            Console.WriteLine("numberOne = " + numberOne);
+            Console.WriteLine("numberTwo = " + numberTwo);
+
+            result = numberOne + numberTwo;
+            numberOne = result - numberOne;
+            numberTwo = result - numberTwo;
+
+            Console.WriteLine("numberOne = " + numberOne);
+            Console.WriteLine("numberTwo = " + numberTwo);
+            Console.ReadKey();
+        }
+    }
+}
