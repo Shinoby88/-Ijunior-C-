@@ -1,0 +1,33 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp16
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            
+            string name = "Вася";
+            string surname = "Пупкин";
+
+            
+            Console.WriteLine("Имя: " + name + ", Фамилия: " + surname);
+
+            
+            string temporaryVariable = name;
+            name = surname;
+            surname = temporaryVariable = name;
+            ;
+
+
+            Console.WriteLine("Имя: " + name + ", Фамилия: " + surname);
+
+            Console.ReadLine();
+            Console.ReadKey();
+        }
+    }
+}
