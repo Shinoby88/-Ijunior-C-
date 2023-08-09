@@ -10,22 +10,13 @@ namespace ConsoleApp16
     {
         static void Main(string[] args)
         {
-            
             string name = "Вася";
             string surname = "Пупкин";
-
-            
             Console.WriteLine("Имя: " + name + ", Фамилия: " + surname);
-
-            
             string temporaryVariable = name;
             name = surname;
             surname = temporaryVariable = name;
-            ;
-
-
             Console.WriteLine("Имя: " + name + ", Фамилия: " + surname);
-
             Console.ReadLine();
             Console.ReadKey();
         }
