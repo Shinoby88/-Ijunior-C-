@@ -1,1 +1,32 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Crystall
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            int yourGold;
+            int crystals;
+            int cristalUnitPrice = 10;
+
+            Console.WriteLine("Добро пожаловать в магазин кристалов, Сегодня кристалы стоят " + cristalUnitPrice);
+            Console.Write("Сколько золота у вас в мешке? ");
+            yourGold = Convert.ToInt32(Console.ReadLine());
+            Console.Write("Сколько кристалов вам нужно? ");
+            crystals = Convert.ToInt32(Console.ReadLine());
+
+            yourGold = yourGold - cristalUnitPrice * crystals;
+
+            Console.WriteLine($"У вас осталось {yourGold} золота и в вашем мешке {crystals} кристалов");
+
+
+
+        }
+    }
+}
 
