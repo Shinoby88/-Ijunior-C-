@@ -1,1 +1,36 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Runtime.InteropServices;
+using System.Text;
+using System.Threading.Tasks;
 
+namespace bolnizzza
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            int numberOfPeople; 
+            int timeForReception = 10; 
+            int minutes = 60;
+            int timeMinuts;
+            int timeHours;
+            int timeMinutSeconds;
+
+            Console.WriteLine("Добро Пожаловать в больницу");
+            Console.WriteLine("Время нахождения одной бабки у врача 10 минут");
+            Console.Write("Сколько бабок в очереди ");
+
+            numberOfPeople = Convert.ToInt32(Console.ReadLine()); 
+
+            timeMinuts = timeForReception * numberOfPeople; 
+            timeHours = timeMinuts / 60;
+            timeMinutSeconds = timeMinuts % 60;
+
+            Console.WriteLine("Время ожидания в минутах: " + timeMinuts);
+            Console.WriteLine("Время ожидания в часах и минутах: " + timeHours + " часов " + timeMinutSeconds + " Минут");
+            
+        }
+    }
+}
