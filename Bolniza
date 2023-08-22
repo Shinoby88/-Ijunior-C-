@@ -13,23 +13,24 @@ namespace bolnizzza
         {
             int numberOfPeople; 
             int timeForReception = 10; 
-            int minutes = 60;
-            int timeMinuts;
-            int timeHours;
-            int timeMinutSeconds;
+            int minutesPerHour = 60;
+            int secondsInAMinute = 60;
+            int queueWaitingTimeInMinutes;
+            int timeInHours;
+            int timeInMinutesAndSeconds;
 
             Console.WriteLine("Добро Пожаловать в больницу");
-            Console.WriteLine("Время нахождения одной бабки у врача 10 минут");
-            Console.Write("Сколько бабок в очереди ");
+            Console.WriteLine($"Время нахождения одной бабки у врача {timeForReception} минут");
+            Console.Write("Сколько бабок в очереди = ");
 
-            numberOfPeople = Convert.ToInt32(Console.ReadLine()); 
+            numberOfPeople = Convert.ToInt32(Console.ReadLine());
 
-            timeMinuts = timeForReception * numberOfPeople; 
-            timeHours = timeMinuts / 60;
-            timeMinutSeconds = timeMinuts % 60;
+            queueWaitingTimeInMinutes = timeForReception * numberOfPeople;
+            timeInHours = queueWaitingTimeInMinutes / minutesPerHour;
+            timeInMinutesAndSeconds = queueWaitingTimeInMinutes % secondsInAMinute;
 
-            Console.WriteLine("Время ожидания в минутах: " + timeMinuts);
-            Console.WriteLine("Время ожидания в часах и минутах: " + timeHours + " часов " + timeMinutSeconds + " Минут");
+            Console.WriteLine("Время ожидания в минутах: " + queueWaitingTimeInMinutes + " минут");
+            Console.WriteLine("Время ожидания в часах и минутах: " + timeInHours + " часов " + timeInMinutesAndSeconds + " Минут");
             
         }
     }
