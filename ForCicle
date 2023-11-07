@@ -1,0 +1,24 @@
+using System;
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp21
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            int firstDigital = 5;
+            int lastDigital = 103;
+            int step = 7;
+
+            for(int rowDigital = firstDigital; rowDigital < lastDigital; rowDigital = rowDigital + step)
+            {
+                Console.Write(rowDigital + " ");
+            }
+        }
+    }
+}
