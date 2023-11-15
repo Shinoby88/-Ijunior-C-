@@ -1,0 +1,36 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp24
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            int triesCount = 5;
+            string wordExit = "exit";
+            string inputUser;
+
+            for (int i = 0; i < triesCount; i = i + 1)
+            {
+                Console.WriteLine("Введите слово " + wordExit + " для выхода из цикла");
+                inputUser = Console.ReadLine();
+
+                if (inputUser == wordExit)
+                {
+                    Console.WriteLine("Вышли из цикла");
+                    break;
+                }
+                else
+                {
+                    Console.WriteLine("Введено не то слово");
+                    Console.WriteLine("У вас есть еще " + (triesCount - (i+1)) + " попытки");
+                }
+            }
+
+        }
+    }
+}
