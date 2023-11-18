@@ -10,9 +10,10 @@ namespace ConsoleApp26
     {
         static void Main(string[] args)
         {
+            string wordExit = "exit";
             string word = "";
 
-            while (word != "exit")
+            while (word != wordExit)
             {
                 Console.WriteLine("Введите слово: ");
                 word = Console.ReadLine();
