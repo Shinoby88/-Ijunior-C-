@@ -11,8 +11,10 @@ namespace ConsoleApp22
     {
         static void Main(string[] args)
         {
-            int firstDivisor = 3; int secondDivisor = 5;
-            int firstRandomNumber = 1; int lastRandomNumber = 101; 
+            int firstDivisor = 3;
+            int secondDivisor = 5;
+            int firstRandomNumber = 1;
+            int lastRandomNumber = 101; 
             
             Random random = new Random();
             int number = random.Next(firstRandomNumber, lastRandomNumber);
@@ -20,6 +22,7 @@ namespace ConsoleApp22
             Console.WriteLine("Случайно сгенерированное число: " + number);
 
             int theAmount = 0;
+
             for (int i = 1; i <= number; i++)
             {
                 if (i % firstDivisor == 0 || i % secondDivisor == 0)
