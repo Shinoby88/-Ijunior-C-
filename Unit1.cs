@@ -20,19 +20,6 @@ namespace ConsoleApp6
          long creditSecond = -900000;
          ulong metallQuantity = 345;
          char zodiakSign = 'd';
-         Console.WriteLine("Количество бензина " + litersPetrol);
-         Console.WriteLine("Деньги котрые должен отдать " + creditFirst);
-         Console.WriteLine("Количество юнитов " + units);
-         Console.WriteLine("Количество кораблей в порту " + ships);
-         Console.WriteLine("Количество золота " + goldBalance);
-         Console.WriteLine("Координаты хз чего " + coordinatesAxisY);
-         Console.WriteLine("Как зовут героя" + nameHero);
-         Console.WriteLine("Задолжность " + creditSecond);
-         Console.WriteLine("Количество металла " + metallQuantity);
-         Console.WriteLine("Символ " + zodiakSign);
-         Console.ReadKey();
-        
-
-        }
+         }
     }
 }
