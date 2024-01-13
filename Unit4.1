@@ -12,15 +12,15 @@ namespace ConsoleApp16
         {
             string name = "Вася";
             string surname = "Пупкин";
+
+            Console.WriteLine("Имя: " + name + ", Фамилия: " + surname);
+
+            string temporaryVariableOne = surname;
+            string temporaryVariableTwo = name;
+            surname = temporaryVariableTwo;
+            name = temporaryVariableOne;
             
             Console.WriteLine("Имя: " + name + ", Фамилия: " + surname);
-            
-            string temporaryVariable = name;
-            name = surname;
-            surname = temporaryVariable = name;
-            
-            Console.WriteLine("Имя: " + name + ", Фамилия: " + surname);
-            Console.ReadLine();
-          }
+        }
     }
 }
