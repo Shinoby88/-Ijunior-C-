@@ -10,22 +10,19 @@ namespace Crystall
     {
         static void Main(string[] args)
         {
-            int yourGold;
+            int Gold;
             int crystals;
             int cristalUnitPrice = 10;
 
             Console.WriteLine("Добро пожаловать в магазин кристалов, Сегодня кристалы стоят " + cristalUnitPrice);
             Console.Write("Сколько золота у вас в мешке? ");
-            yourGold = Convert.ToInt32(Console.ReadLine());
+            Gold = Convert.ToInt32(Console.ReadLine());
             Console.Write("Сколько кристалов вам нужно? ");
             crystals = Convert.ToInt32(Console.ReadLine());
 
-            yourGold = yourGold - cristalUnitPrice * crystals;
+            Gold -= cristalUnitPrice * crystals;
 
-            Console.WriteLine($"У вас осталось {yourGold} золота и в вашем мешке {crystals} кристалов");
-
-
-
+            Console.WriteLine($"У вас осталось {Gold} золота и в вашем мешке {crystals} кристалов")
         }
     }
 }
