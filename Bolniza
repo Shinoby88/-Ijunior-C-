@@ -11,8 +11,8 @@ namespace bolnizzza
     {
         static void Main(string[] args)
         {
-            int numberOfPeople; 
-            int timeForReception = 10; 
+            int countOfPeople;
+            int timeForReceptionMinutes = 10;
             int minutesPerHour = 60;
             int secondsInAMinute = 60;
             int queueWaitingTimeInMinutes;
@@ -20,17 +20,17 @@ namespace bolnizzza
             int timeInMinutesAndSeconds;
 
             Console.WriteLine("Добро Пожаловать в больницу");
-            Console.WriteLine($"Время нахождения одной бабки у врача {timeForReception} минут");
+            Console.WriteLine($"Время нахождения одной бабки у врача {timeForReceptionMinutes} минут");
             Console.Write("Сколько бабок в очереди = ");
 
-            numberOfPeople = Convert.ToInt32(Console.ReadLine());
+            countOfPeople = Convert.ToInt32(Console.ReadLine());
 
-            queueWaitingTimeInMinutes = timeForReception * numberOfPeople;
+            queueWaitingTimeInMinutes = timeForReceptionMinutes * countOfPeople;
             timeInHours = queueWaitingTimeInMinutes / minutesPerHour;
             timeInMinutesAndSeconds = queueWaitingTimeInMinutes % secondsInAMinute;
 
             Console.WriteLine("Время ожидания в минутах: " + queueWaitingTimeInMinutes + " минут");
-            Console.WriteLine("Время ожидания в часах и минутах: " + timeInHours + " часов " + timeInMinutesAndSeconds + " Минут")            
+            Console.WriteLine("Время ожидания в часах и минутах: " + timeInHours + " часов " + timeInMinutesAndSeconds + " Минут");
         }
     }
 }
