@@ -30,8 +30,7 @@ namespace bolnizzza
             timeInMinutesAndSeconds = queueWaitingTimeInMinutes % secondsInAMinute;
 
             Console.WriteLine("Время ожидания в минутах: " + queueWaitingTimeInMinutes + " минут");
-            Console.WriteLine("Время ожидания в часах и минутах: " + timeInHours + " часов " + timeInMinutesAndSeconds + " Минут");
-            
+            Console.WriteLine("Время ожидания в часах и минутах: " + timeInHours + " часов " + timeInMinutesAndSeconds + " Минут")            
         }
     }
 }
