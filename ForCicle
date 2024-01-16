@@ -1,23 +1,24 @@
 using System;
 using System.Collections.Generic;
-using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ConsoleApp21
+namespace ConsoleApp19
 {
     internal class Program
     {
         static void Main(string[] args)
         {
-            int firstDigital = 5;
-            int lastDigital = 103;
-            int step = 7;
+            int minimalDigital = 0;
+            Console.WriteLine("Введите количество сообщений = ");
+            int maximalDigital = Convert.ToInt32(Console.ReadLine()); 
+            Console.Write("Введите сообщение = ");
+            string message = Console.ReadLine();
 
-            for(int rowDigital = firstDigital; rowDigital < lastDigital; rowDigital = rowDigital + step)
+            for (int i = minimalDigital; i < maximalDigital; i++)
             {
-                Console.Write(rowDigital + " ");
+                Console.WriteLine(message);
             }
         }
     }
