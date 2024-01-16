@@ -1,1 +1,25 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp36
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            int minimalDigital = 5;
+            int maximalDigital = 96;
+            int step = 7;
+
+            for (int i = minimalDigital;  i <= maximalDigital; i = i + 7)
+            {
+                Console.Write($" {i} ");
+            }
+                 
+        }
+    }
+}
 
