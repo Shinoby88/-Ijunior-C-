@@ -10,15 +10,15 @@ namespace ConsoleApp36
     {
         static void Main(string[] args)
         {
-            int minimalDigital = 5;
-            int maximalDigital = 96;
+            int minDigital = 5;
+            int maxDigital = 96;
             int step = 7;
 
-            for (int i = minimalDigital;  i <= maximalDigital; i = i + 7)
+            for (int i = minDigital;  i <= maxDigital; i += step)
             {
                 Console.Write($" {i} ");
             }
+                   
         }
     }
 }
-
