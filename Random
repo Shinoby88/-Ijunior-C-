@@ -13,24 +13,24 @@ namespace ConsoleApp22
         {
             int firstDivisor = 3;
             int secondDivisor = 5;
-            int firstRandomNumber = 1;
-            int lastRandomNumber = 101; 
-            
+            int firstRandomCount = 1;
+            int lastRandomCount = 101;
+
             Random random = new Random();
-            int number = random.Next(firstRandomNumber, lastRandomNumber);
+            int count = random.Next(firstRandomCount, lastRandomCount);
 
-            Console.WriteLine("Случайно сгенерированное число: " + number);
+            Console.WriteLine("Случайно сгенерированное число: " + count);
 
-            int theAmount = 0;
+            int amount = 0;
 
-            for (int i = 1; i <= number; i++)
+            for (int i = 1; i <= count; i++)
             {
                 if (i % firstDivisor == 0 || i % secondDivisor == 0)
                 {
-                    theAmount += i;
+                    amount += i;
                 }
             }
-            Console.WriteLine("Сумма всех положительных чисел меньше " + number + ", кратных 3 или 5: " +theAmount);
+            Console.WriteLine("Сумма всех положительных чисел меньше " + count + ", кратных 3 или 5: " + amount);
         }
     }
 }
