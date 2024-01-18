@@ -20,7 +20,7 @@ namespace ConsoleApp22
             int count = random.Next(firstRandomCount, lastRandomCount);
 
             Console.WriteLine("Случайно сгенерированное число: " + count);
-
+//честно я уже запутался)))))
             int amount = 0;
 
             for (int i = 1; i <= count; i++)
@@ -31,7 +31,7 @@ namespace ConsoleApp22
                 }
             }
 
-            Console.WriteLine($"Сумма всех положительных чисел меньше {count}, кратных {firstDivisor} или {secondDivisor} amount");
+            Console.WriteLine($"Сумма всех положительных чисел меньше {count}, кратных {firstDivisor} или {secondDivisor}  {amount}");
         }
     }
 }
