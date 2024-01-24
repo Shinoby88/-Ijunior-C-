@@ -17,21 +17,21 @@ namespace ConsoleApp22
             int lastRandomCount = 101;
 
             Random random = new Random();
-            int count = random.Next(firstRandomCount, lastRandomCount);
+            int number = random.Next(firstRandomCount, lastRandomCount);
 
-            Console.WriteLine("Случайно сгенерированное число: " + count);
-//честно я уже запутался)))))
-            int amount = 0;
+            Console.WriteLine("Случайно сгенерированное число: " + number);
+            
+            int sum = 0;
 
-            for (int i = 1; i <= count; i++)
+            for (int i = 1; i <= number; i++)
             {
                 if (i % firstDivisor == 0 || i % secondDivisor == 0)
                 {
-                    amount += i;
+                    sum += i;
                 }
             }
 
-            Console.WriteLine($"Сумма всех положительных чисел меньше {count}, кратных {firstDivisor} или {secondDivisor}  {amount}");
+            Console.WriteLine($"Сумма всех положительных чисел меньше {number}, кратных {firstDivisor} или {secondDivisor}  {sum}");
         }
     }
 }
