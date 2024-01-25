@@ -27,7 +27,6 @@ namespace ConsoleApp32
             Console.Write("Введите количество евро = ");
             euro = Convert.ToSingle(Console.ReadLine());
             
-
             Console.WriteLine("Добро пожаловать в наш обменник валют. У нас вы можете обменять: Рубли в доллары, доллары в рубли, евро в рубли, рубли в евро, доллары на евро и евро на доллары ");
             Console.WriteLine("Выберете номер пункта");
             Console.WriteLine("1 - обменять рубли на доллары ");
@@ -54,6 +53,7 @@ namespace ConsoleApp32
                         Console.WriteLine("Не допустимое количество рублей");
                     }
                     break;
+
                 case "2":
                     Console.WriteLine("Обмен долларов на рубли");
                     Console.Write("Сколько вы хотите поменять?? ");
@@ -68,6 +68,7 @@ namespace ConsoleApp32
                         Console.WriteLine("Не допустимое количество рублей");
                     }
                     break;
+
                 case "3":
                     Console.WriteLine("Обмен евро на рубли");
                     Console.Write("Сколько вы хотите обменять? ");
@@ -83,6 +84,7 @@ namespace ConsoleApp32
                     }
                     break;
                 case "4":
+
                     Console.WriteLine("Обмен рублей на евро");
                     Console.Write("Сколько вы хотите обменять? ");
                     currencyCount = Convert.ToSingle(Console.ReadLine());
@@ -97,6 +99,7 @@ namespace ConsoleApp32
                     }
                     break;
                 case "5":
+
                     Console.WriteLine("Обмен долларов на евро");
                     Console.Write("Сколько вы хотите обменять? ");
                     currencyCount = Convert.ToSingle(Console.ReadLine());
@@ -111,6 +114,7 @@ namespace ConsoleApp32
                     }
                     break;
                 case "6":
+
                     Console.WriteLine("Обмен евро на доллары");
                     Console.Write("Сколько вы хотите обменять? ");
                     currencyCount = Convert.ToSingle(Console.ReadLine());
