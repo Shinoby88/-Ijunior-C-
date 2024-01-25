@@ -124,10 +124,8 @@ namespace ConsoleApp32
                         Console.WriteLine("Не допустимое количество евро");
                     }
                     break;
-
             }
             Console.WriteLine("Ваш баланс - " + rub + "рублей и ваш баланс - " + usd + "долларов ваш баланс - " + euro + "евро");
-
         }
     }
 }
