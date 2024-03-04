@@ -1,0 +1,105 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp33
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            string colorConsole;
+            string userInput = "1234";
+            string userName = "User";
+            string inputPassword;
+            Console.WriteLine("Выберите пункт и введите в консоль. ");
+            Console.WriteLine("Меню");
+            Console.WriteLine("1. Установите имя ");
+            Console.WriteLine("2. Изменить цвет консоли ");
+            Console.WriteLine("3. Установить пароль ");
+            Console.WriteLine("4. Вывести имя Пользователя после ввода пароля");
+            Console.WriteLine("5. Выход из программы ");
+
+            while (true)
+            {
+                Console.Write("Введите пункт меню = ");
+                userInput = Console.ReadLine();
+                if (userInput == "1")
+                {
+                    Console.Write("Введите имя пользователя или для выхода exit ");
+                    userName = Console.ReadLine();
+                    if (userName != "exit")
+                    {
+                        Console.WriteLine("Имя пользователя " + userName);
+                        continue;
+                    }
+                    else if (userName == "exit")
+                    {
+                        Console.WriteLine("Имя не ввели, выход");
+                        continue;
+                    }
+                }
+                if (userInput == "2")
+                {
+                    Console.Write("Введите цвет Синий, Зеленый или Красный для выхода введите 'exit' = ");
+                    colorConsole = Console.ReadLine();
+                    if (colorConsole == "Синий")
+                    {
+                        Console.ForegroundColor = ConsoleColor.Blue;
+                        continue;
+                    }
+                    else if (colorConsole == "Зеленый")
+                    {
+                        Console.ForegroundColor = ConsoleColor.Green;
+                        continue;
+                    }
+                    else if (colorConsole == "Красный")
+                    {
+                        Console.ForegroundColor = ConsoleColor.Red;
+                        continue;
+                    }
+                    else if (colorConsole == "exit")
+                    {
+                        continue;
+                    }
+                }
+                if (userInput == "3")
+                {
+                    Console.Write("Установите пароль для выхода введите 'exit' = ");
+                    inputPassword = Console.ReadLine();
+                    Console.WriteLine("Пароль установленн");
+                    continue;
+                }
+                else
+                {
+                    Console.WriteLine("Пароль по умолчанию, вышли в предыдущее меню ");
+                    continue;
+                }
+                if (userInput == "4")
+                {
+                    Console.WriteLine("Вывести имя Пользователя после ввода пароля");
+                    Console.Write("");
+                    string inputPassword2 = Console.ReadLine();
+                    if (inputPassword == inputPassword2)
+                    {
+                        Console.WriteLine("Имя пользователя = " + userName);
+                        continue;
+                    }
+                    else
+                    {
+                        Console.WriteLine(" пароль не верный");
+                        continue;
+                    }
+
+                }
+                if (userInput == "5")
+                {
+                    Console.WriteLine("Программа завершена");
+                    break;
+                }
+            }
+        }
+    }
+}
