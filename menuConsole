@@ -92,8 +92,8 @@ namespace ConsoleApp33
                         Console.WriteLine(" пароль не верный");
                         continue;
                     }
-
-                }
+                    
+                }               
                 if (userInput == "5")
                 {
                     Console.WriteLine("Программа завершена");
