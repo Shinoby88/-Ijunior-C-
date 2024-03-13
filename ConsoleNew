@@ -4,17 +4,19 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+
+
 namespace ConsoleApp33
 {
     internal class Program
     {
         static void Main(string[] args)
         {
-            string oneItemMenu = "1";
-            string twoItemMenu = "2";
-            string threeItemMenu = "3"; 
-            string fourItemMenu = "4";
-            string fiveItemMenu = "5";
+            string firstMenuItem = "1";
+            string secondMenuItem = "2";
+            string threeMenuItem = "3"; 
+            string fourthMenuItem = "4";
+            string fifthMenuItem = "5";
             string commandExit = "exit";
             string colorConsole;
             string userInput = "1234";
@@ -22,17 +24,18 @@ namespace ConsoleApp33
             string inputPassword;
             Console.WriteLine("Выберите пункт и введите в консоль. ");
             Console.WriteLine("Меню");
-            Console.WriteLine($"{oneItemMenu}. Установите имя ");
-            Console.WriteLine($"{twoItemMenu}. Изменить цвет консоли ");
-            Console.WriteLine($"{threeItemMenu}. Установить пароль ");
-            Console.WriteLine($"{fourItemMenu}. Вывести имя Пользователя после ввода пароля");
-            Console.WriteLine($"{fiveItemMenu}. Выход из программы ");
+            Console.WriteLine($"{firstMenuItem}. Установите имя ");
+            Console.WriteLine($"{secondMenuItem}. Изменить цвет консоли ");
+            Console.WriteLine($"{threeMenuItem}. Установить пароль ");
+            Console.WriteLine($"{fourthMenuItem}. Вывести имя Пользователя после ввода пароля");
+            Console.WriteLine($"{fifthMenuItem}. Выход из программы ");
 
-            while (true)
+            while (userInput != commandExit)
             {
                 Console.Write("Введите пункт меню = ");
                 userInput = Console.ReadLine();
-                if (userInput == oneItemMenu)
+
+                if (userInput == firstMenuItem)
                 {
                     Console.Write("Введите имя пользователя или для выхода exit ");
                     userName = Console.ReadLine();
@@ -46,8 +49,9 @@ namespace ConsoleApp33
                         Console.WriteLine("Имя не ввели, выход");
                         continue;
                     }
+
                 }
-                if (userInput == twoItemMenu)
+                if (userInput == secondMenuItem)
                 {
                     Console.Write("Введите цвет Синий, Зеленый или Красный для выхода введите 'exit' = ");
                     colorConsole = Console.ReadLine();
@@ -71,7 +75,7 @@ namespace ConsoleApp33
                         continue;
                     }
                 }
-                if (userInput == threeItemMenu)
+                if (userInput == threeMenuItem)
                 {
                     Console.Write("Установите пароль для выхода введите 'exit' = ");
                     inputPassword = Console.ReadLine();
@@ -83,7 +87,7 @@ namespace ConsoleApp33
                     Console.WriteLine("Пароль по умолчанию, вышли в предыдущее меню ");
                     continue;
                 }
-                if (userInput == fourItemMenu)
+                if (userInput == fourthMenuItem)
                 {
                     Console.WriteLine("Вывести имя Пользователя после ввода пароля");
                     Console.Write("");
@@ -100,7 +104,7 @@ namespace ConsoleApp33
                     }
 
                 }
-                if (userInput == fiveItemMenu)
+                if (userInput == fifthMenuItem)
                 {
                     Console.WriteLine("Программа завершена");
                     break;
