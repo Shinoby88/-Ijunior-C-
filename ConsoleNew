@@ -1,10 +1,4 @@
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-
 
 namespace ConsoleApp33
 {
@@ -14,22 +8,23 @@ namespace ConsoleApp33
         {
             string firstMenuItem = "1";
             string secondMenuItem = "2";
-            string threeMenuItem = "3"; 
+            string threeMenuItem = "3";
             string fourthMenuItem = "4";
             string fifthMenuItem = "5";
             string commandExit = "exit";
             string colorConsole;
-            string userInput = "1234";
+            string userInput = "0";
             string userName = "User";
-            string inputPassword;
-            Console.WriteLine("Выберите пункт и введите в консоль. ");
+            string inputPassword = "1234";
+
+            Console.WriteLine("Выберите пункт и введите в консоль. Для выхода введите exit");
             Console.WriteLine("Меню");
             Console.WriteLine($"{firstMenuItem}. Установите имя ");
             Console.WriteLine($"{secondMenuItem}. Изменить цвет консоли ");
             Console.WriteLine($"{threeMenuItem}. Установить пароль ");
             Console.WriteLine($"{fourthMenuItem}. Вывести имя Пользователя после ввода пароля");
-            Console.WriteLine($"{fifthMenuItem}. Выход из программы ");
-
+            Console.WriteLine($"{fifthMenuItem}. Вывести на экран случайное число ");
+                        
             while (userInput != commandExit)
             {
                 Console.Write("Введите пункт меню = ");
@@ -37,77 +32,71 @@ namespace ConsoleApp33
 
                 if (userInput == firstMenuItem)
                 {
-                    Console.Write("Введите имя пользователя или для выхода exit ");
+                    Console.Write("Введите имя пользователя иля для выхода введите exit =");
                     userName = Console.ReadLine();
+                    
                     if (userName != commandExit)
                     {
                         Console.WriteLine("Имя пользователя " + userName);
-                        continue;
                     }
                     else if (userName == commandExit)
                     {
-                        Console.WriteLine("Имя не ввели, выход");
-                        continue;
+                        Console.WriteLine("Имя пользователя не ввели, выход");
                     }
-
                 }
-                if (userInput == secondMenuItem)
+                else if (userInput == secondMenuItem)   
                 {
-                    Console.Write("Введите цвет Синий, Зеленый или Красный для выхода введите 'exit' = ");
+                    Console.Write("Введите цвет Синий, Зеленый или красный для выхода введите exit = ");
                     colorConsole = Console.ReadLine();
-                    if (colorConsole == "Синий")
-                    {
-                        Console.ForegroundColor = ConsoleColor.Blue;
-                        continue;
-                    }
-                    else if (colorConsole == "Зеленый")
+                    
+                    if (colorConsole == "Зеленый")
                     {
                         Console.ForegroundColor = ConsoleColor.Green;
-                        continue;
+                    }
+                    else if (colorConsole == "Синий")
+                    {
+                        Console.ForegroundColor = ConsoleColor.Blue;
                     }
                     else if (colorConsole == "Красный")
                     {
                         Console.ForegroundColor = ConsoleColor.Red;
-                        continue;
                     }
                     else if (colorConsole == commandExit)
                     {
-                        continue;
+                        Console.WriteLine("Выход");
                     }
                 }
-                if (userInput == threeMenuItem)
+                else if (userInput == threeMenuItem)
                 {
-                    Console.Write("Установите пароль для выхода введите 'exit' = ");
+                    Console.Write("Установите пароль для выхода введите exit = ");
                     inputPassword = Console.ReadLine();
-                    Console.WriteLine("Пароль установленн");
-                    continue;
+                    Console.WriteLine("Пароль установлен");
                 }
-                else
-                {
-                    Console.WriteLine("Пароль по умолчанию, вышли в предыдущее меню ");
-                    continue;
-                }
-                if (userInput == fourthMenuItem)
-                {
-                    Console.WriteLine("Вывести имя Пользователя после ввода пароля");
-                    Console.Write("");
-                    string inputPassword2 = Console.ReadLine();
-                    if (inputPassword == inputPassword2)
+                else if (userInput == fourthMenuItem) 
+                { 
+                    Console.WriteLine("Вывести имя пользователя после ввода пароля ");
+                    Console.Write("Введите паролль = ");
+                    string inputPasswordTwo = Console.ReadLine();
+
+                    if (inputPasswordTwo == inputPassword)
                     {
                         Console.WriteLine("Имя пользователя = " + userName);
-                        continue;
                     }
                     else
                     {
-                        Console.WriteLine(" пароль не верный");
-                        continue;
+                        Console.WriteLine("Пароль не верный");
                     }
-
                 }
-                if (userInput == fifthMenuItem)
+                else if (userInput == fifthMenuItem) 
                 {
-                    Console.WriteLine("Программа завершена");
-                    break;
+                    Console.WriteLine("Вывести на экран случайное число");
+                    Random rnd = new Random();  
+                    int value = rnd.Next();
+                    Console.WriteLine("Случайное число = " + value);
+                }
+                else if (userInput == commandExit) 
+                {
+                     Console.WriteLine("Вышли из меню.");
                 }
             }
         }
