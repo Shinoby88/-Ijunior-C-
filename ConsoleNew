@@ -1,5 +1,4 @@
 using System;
-using System.Security.Policy;
 
 namespace ConsoleApp33
 {
@@ -7,37 +6,40 @@ namespace ConsoleApp33
     {
         static void Main(string[] args)
         {
-            string firstMenuItem = "1";
-            string secondMenuItem = "2";
-            string threeMenuItem = "3";
-            string fourthMenuItem = "4";
-            string fifthMenuItem = "5";
-            string sixthMenuItem = "6"; 
+            string firstMenuItemForName = "1";
+            string secondMenuItemForColorsConsole = "2";
+            string threeMenuItemForPasswordSettings = "3";
+            string fourthMenuItemForOutputUserName = "4";
+            string fifthMenuItemForOutputRandomNumber = "5";
+            string sixthMenuItemForClearingConsole = "6"; 
             string commandExit = "exit";
             string colorConsole;
             string userInput = "0";
             string userName = "User";
             string inputPassword = "1234";
+            string blue = "синий";
+            string green = "зеленый";
+            string red = "красный";
 
             Console.WriteLine($"Выберите пункт и введите в консоль. Для выхода введите {commandExit}");
             Console.WriteLine("Меню");
-            Console.WriteLine($"{firstMenuItem}. Установите имя ");
-            Console.WriteLine($"{secondMenuItem}. Изменить цвет консоли ");
-            Console.WriteLine($"{threeMenuItem}. Установить пароль ");
-            Console.WriteLine($"{fourthMenuItem}. Вывести имя Пользователя после ввода пароля");
-            Console.WriteLine($"{fifthMenuItem}. Вывести на экран случайное число ");
-            Console.WriteLine($"{sixthMenuItem}. Очистить консоль");  
+            Console.WriteLine($"{firstMenuItemForName}. Установите имя ");
+            Console.WriteLine($"{secondMenuItemForColorsConsole}. Изменить цвет консоли ");
+            Console.WriteLine($"{threeMenuItemForPasswordSettings}. Установить пароль ");
+            Console.WriteLine($"{fourthMenuItemForOutputUserName}. Вывести имя Пользователя после ввода пароля");
+            Console.WriteLine($"{fifthMenuItemForOutputRandomNumber}. Вывести на экран случайное число ");
+            Console.WriteLine($"{sixthMenuItemForClearingConsole}. Очистить консоль");  
                         
             while (userInput != commandExit)
             {
                 Console.Write("Введите пункт меню = ");
                 userInput = Console.ReadLine();
 
-                if (userInput == firstMenuItem)
+                if (userInput == firstMenuItemForName)
                 {
                     Console.Write($"Введите имя пользователя иля для выхода введите {commandExit} =");
                     userName = Console.ReadLine();
-                    
+
                     if (userName != commandExit)
                     {
                         Console.WriteLine("Имя пользователя " + userName);
@@ -47,38 +49,38 @@ namespace ConsoleApp33
                         Console.WriteLine("Имя пользователя не ввели, выход");
                     }
                 }
-                else if (userInput == secondMenuItem)   
+                else if (userInput == secondMenuItemForColorsConsole)   
                 {
-                    Console.Write($"Введите цвет Синий, Зеленый или красный для выхода введите {commandExit} = ");
+                    Console.Write($"Введите цвет {blue}, {green} или {red} для выхода введите {commandExit} = ");
                     colorConsole = Console.ReadLine();
                     
-                    if (colorConsole == "Зеленый")
+                    if (colorConsole == green)
                     {
                         Console.ForegroundColor = ConsoleColor.Green;
                     }
-                    else if (colorConsole == "Синий")
+                    else if (colorConsole == blue)
                     {
                         Console.ForegroundColor = ConsoleColor.Blue;
                     }
-                    else if (colorConsole == "Красный")
+                    else if (colorConsole == red)
                     {
                         Console.ForegroundColor = ConsoleColor.Red;
                     }
-                    else if (colorConsole == commandExit)
+                    else
                     {
                         Console.WriteLine("Выход");
                     }
                 }
-                else if (userInput == threeMenuItem)
+                else if (userInput == threeMenuItemForPasswordSettings)
                 {
                     Console.Write($"Установите пароль для выхода введите {commandExit} = ");
                     inputPassword = Console.ReadLine();
                     Console.WriteLine("Пароль установлен");
                 }
-                else if (userInput == fourthMenuItem) 
+                else if (userInput == fourthMenuItemForOutputUserName) 
                 { 
                     Console.WriteLine("Вывести имя пользователя после ввода пароля ");
-                    Console.Write("Введите паролль = ");
+                    Console.Write("Введите пароль = ");
                     string inputPasswordTwo = Console.ReadLine();
 
                     if (inputPasswordTwo == inputPassword)
@@ -90,18 +92,18 @@ namespace ConsoleApp33
                         Console.WriteLine("Пароль не верный");
                     }
                 }
-                else if (userInput == fifthMenuItem) 
+                else if (userInput == fifthMenuItemForOutputRandomNumber) 
                 {
                     Console.WriteLine("Вывести на экран случайное число");
                     Random random = new Random();  
                     int value = random.Next();
                     Console.WriteLine("Случайное число = " + value);
                 }
-                else if (userInput == sixthMenuItem)
+                else if (userInput == sixthMenuItemForClearingConsole)
                 {
                     Console.Clear();
                 }
-                else if (userInput == commandExit)
+                else
                 {
                     Console.WriteLine("Вышли из меню.");
                 }
