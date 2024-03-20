@@ -17,14 +17,14 @@ namespace ConsoleApp32
             float usdToRub = 0.9f;
             int euroToRub = 98;
             float rubToEuro = 0.1f;
-            float rubles;
+            float russianMoney; //я не очень понимаю как назвать
             float usd;
             float euro;
             string userInput;
             float currencyCount;
             
             Console.Write("Введите количество рублей = ");
-            rubles = Convert.ToSingle(Console.ReadLine());
+            russianMoney = Convert.ToSingle(Console.ReadLine());
             Console.Write("Введите количество долларов = ");
             usd = Convert.ToSingle(Console.ReadLine());
             Console.Write("Введите количество евро = ");
@@ -48,9 +48,9 @@ namespace ConsoleApp32
                     Console.Write("Сколько вы хотите обменять??? ");
                     currencyCount = Convert.ToSingle(Console.ReadLine());
                     
-                    if (rubles >= currencyCount)
+                    if (russianMoney >= currencyCount)
                     {
-                        rubles -= currencyCount; 
+                        russianMoney -= currencyCount; 
                         usd += currencyCount / rubToUsd; 
                     }
                     else
@@ -64,10 +64,10 @@ namespace ConsoleApp32
                     Console.Write("Сколько вы хотите поменять?? ");
                     currencyCount = Convert.ToSingle(Console.ReadLine());
                     
-                    if (rubles >= currencyCount)
+                    if (russianMoney >= currencyCount)
                     {
                         usd -= currencyCount;
-                        rubles += currencyCount / usdToRub; 
+                        russianMoney += currencyCount / usdToRub; 
                     }
                     else
                     {
@@ -83,7 +83,7 @@ namespace ConsoleApp32
                     if (euro >= currencyCount)
                     {
                         euro -= currencyCount;
-                        rubles += currencyCount / euroToRub;
+                        russianMoney += currencyCount / euroToRub;
                     }
                     else
                     {
@@ -96,9 +96,9 @@ namespace ConsoleApp32
                     Console.Write("Сколько вы хотите обменять? ");
                     currencyCount = Convert.ToSingle(Console.ReadLine());
                     
-                    if (rubles >= currencyCount)
+                    if (russianMoney >= currencyCount)
                     {
-                        rubles -= currencyCount;
+                        russianMoney -= currencyCount;
                         euro += currencyCount / rubToEuro;
                     }
                     else
@@ -140,7 +140,7 @@ namespace ConsoleApp32
                     break;
 
             }
-            Console.WriteLine("Ваш баланс - " + rubles + "рублей и ваш баланс - " + usd + "долларов ваш баланс - " + euro + "евро");
+            Console.WriteLine("Ваш баланс - " + russianMoney + "рублей и ваш баланс - " + usd + "долларов ваш баланс - " + euro + "евро");
         }
     }
 }
