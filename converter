@@ -6,12 +6,13 @@ namespace ConsoleApp32
     {
         static void Main(string[] args)
         {
-            const string rubToUsdCommand = "1";
-            const string usdToRubCommand = "2";
-            const string euroToRubCommand = "3";
-            const string rubToEuroCommand = "4";
-            const string usdToEuroCommand = "5";
-            const string euroToUsdCommand = "6";
+            const string RubToUsdCommand = "1";
+            const string UsdToRubCommand = "2";
+            const string EuroToRubCommand = "3";
+            const string RubToEuroCommand = "4";
+            const string UsdToEuroCommand = "5";
+            const string EuroToUsdCommand = "6";
+
             int rubToUsd = 94;
             float usdToRub = 0.9f;
             int euroToRub = 98;
@@ -32,20 +33,21 @@ namespace ConsoleApp32
             Console.WriteLine("Добро пожаловать в наш обменник валют. У нас вы можете обменять: Рубли в доллары, доллары в рубли, евро в рубли, \n" +
             "рубли в евро, доллары на евро и евро на доллары ");
             Console.WriteLine("Выберете номер пункта");
-            Console.WriteLine($"{rubToUsdCommand} - обменять рубли на доллары"); 
-            Console.WriteLine($"{usdToRubCommand} - обменять доллары на рубли ");
-            Console.WriteLine($"{euroToRubCommand} - обменять евро на рубли ");
-            Console.WriteLine($"{rubToEuroCommand} - обменять рубли на евро ");
-            Console.WriteLine($"{usdToEuroCommand} - обменять доллары на евро");
-            Console.WriteLine($"{euroToUsdCommand} - обменять евро на доллары");
+            Console.WriteLine($"{RubToUsdCommand} - обменять рубли на доллары"); 
+            Console.WriteLine($"{UsdToRubCommand} - обменять доллары на рубли ");
+            Console.WriteLine($"{EuroToRubCommand} - обменять евро на рубли ");
+            Console.WriteLine($"{RubToEuroCommand} - обменять рубли на евро ");
+            Console.WriteLine($"{UsdToEuroCommand} - обменять доллары на евро");
+            Console.WriteLine($"{EuroToUsdCommand} - обменять евро на доллары");
             userInput = Console.ReadLine();
 
             switch (userInput)
             {
-                case rubToUsdCommand:
+                case RubToUsdCommand:
                     Console.WriteLine("Обмен рублей на доллары");
                     Console.Write("Сколько вы хотите обменять??? ");
                     currencyCount = Convert.ToSingle(Console.ReadLine());
+                    
                     if (rub >= currencyCount)
                     {
                         rub -= currencyCount; 
@@ -57,10 +59,11 @@ namespace ConsoleApp32
                     }
                     break;
 
-                case usdToRubCommand:
+                case UsdToRubCommand:
                     Console.WriteLine("Обмен долларов на рубли");
                     Console.Write("Сколько вы хотите поменять?? ");
                     currencyCount = Convert.ToSingle(Console.ReadLine());
+                    
                     if (rub >= currencyCount)
                     {
                         usd -= currencyCount;
@@ -72,55 +75,58 @@ namespace ConsoleApp32
                     }
                     break;
 
-                case euroToRubCommand:
+                case EuroToRubCommand:
                     Console.WriteLine("Обмен евро на рубли");
                     Console.Write("Сколько вы хотите обменять? ");
                     currencyCount = Convert.ToSingle(Console.ReadLine());
+                    
                     if (euro >= currencyCount)
                     {
                         euro -= currencyCount;
-                        rub += currencyCount * euroToRub;
+                        rub += currencyCount / euroToRub;
                     }
                     else
                     {
                         Console.WriteLine("Не допустимое количество евро");
                     }
                     break;
-                case rubToEuroCommand:
 
+                case RubToEuroCommand:
                     Console.WriteLine("Обмен рублей на евро");
                     Console.Write("Сколько вы хотите обменять? ");
                     currencyCount = Convert.ToSingle(Console.ReadLine());
+                    
                     if (rub >= currencyCount)
                     {
                         rub -= currencyCount;
-                        euro += currencyCount * rubToEuro;
+                        euro += currencyCount / rubToEuro;
                     }
                     else
                     {
                         Console.WriteLine("Не допустимое количество рублей");
                     }
                     break;
-                case usdToEuroCommand:
-
+                
+                case UsdToEuroCommand:
                     Console.WriteLine("Обмен долларов на евро");
                     Console.Write("Сколько вы хотите обменять? ");
                     currencyCount = Convert.ToSingle(Console.ReadLine());
+                    
                     if (usd >= currencyCount)
                     {
                         usd -= currencyCount;
-                        euro += currencyCount * usdToRub;
+                        euro += currencyCount / usdToRub;
                     }
                     else
                     {
                         Console.WriteLine("Не допустимое количество долларов");
                     }
                     break;
-                case euroToUsdCommand:
-
+                case EuroToUsdCommand:
                     Console.WriteLine("Обмен евро на доллары");
                     Console.Write("Сколько вы хотите обменять? ");
                     currencyCount = Convert.ToSingle(Console.ReadLine());
+                    
                     if (euro >= currencyCount)
                     {
                         euro -= currencyCount;
