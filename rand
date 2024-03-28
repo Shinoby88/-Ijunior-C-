@@ -1,0 +1,31 @@
+using System;
+
+namespace ConsoleApp44
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            int randomDigit;
+            Random random = new Random();
+            int minRandomDigit = 10;
+            int maxRandomDigit = 26;
+            int minValue = 50;
+            int maxValue = 250;
+            int numberAmount = 0;
+
+            randomDigit = random.Next(minRandomDigit, maxRandomDigit);
+
+            Console.WriteLine($"Дано случайное число в диапазоне от {minRandomDigit} до {maxRandomDigit - 1} - случайное число = {randomDigit}.");
+
+            for (int i = randomDigit; i <= maxValue; i += randomDigit)
+            {
+                if (i >= minValue)
+                {
+                    numberAmount++;
+                }
+            }
+            Console.WriteLine($"Количество чисел в диапазоне от {minValue} до {maxValue}, кратных {randomDigit}, - {numberAmount}.");
+        }
+    }
+}
