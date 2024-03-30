@@ -1,0 +1,25 @@
+using System;
+
+namespace ConsoleApp46
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            int digit;
+            Random random = new Random();
+            digit = random.Next(0, 5000);
+            Console.WriteLine($"Случайное число{digit}");
+
+            for (int i = 1; i < digit+digit; i = i * 2)
+
+            {
+                if (i < digit + digit)
+                {
+                    Console.WriteLine($"квадрат двойки равен = {i}");
+                        ;
+                }
+            }
+        }
+    }
+}
