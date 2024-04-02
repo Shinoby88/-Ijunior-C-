@@ -6,18 +6,26 @@ namespace ConsoleApp46
     {
         static void Main(string[] args)
         {
+            int stepCycle = 2;
+            int startCycle = 1;
+            int degreeСounter = 0;
+            int minRandom = 0;
             int digit;
+            
+            Console.Write("Введите максимальное значение диапазона случайного числа = ");
+            int maxRandom = Convert.ToInt32(Console.ReadLine());
+            
             Random random = new Random();
-            digit = random.Next(0, 5000);
-            Console.WriteLine($"Случайное число{digit}");
+            digit = random.Next(minRandom, maxRandom);
+            Console.WriteLine($"Случайное число {digit}");
+            int maxCycleValue = digit + digit;
 
-            for (int i = 1; i < digit+digit; i = i * 2)
-
+            for (int i = startCycle; i < maxCycleValue; i = i * stepCycle)          
             {
-                if (i < digit + digit)
+                if (i < maxCycleValue)
                 {
-                    Console.WriteLine($"квадрат двойки равен = {i}");
-                        ;
+                    Console.WriteLine($"квадрат двойки равен = {i} степень 2 = {degreeСounter}");
+                    degreeСounter++;
                 }
             }
         }
