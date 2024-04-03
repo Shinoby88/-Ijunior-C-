@@ -12,7 +12,6 @@ namespace ConsoleApp46
             int minRandom = 1;
             int digit;
             int baseOfDegree = 2;
-            int i;
 
             Console.Write("Введите максимальное значение диапазона случайного числа = ");
             int maxRandom = Convert.ToInt32(Console.ReadLine());
@@ -20,14 +19,14 @@ namespace ConsoleApp46
             Random random = new Random();
             digit = random.Next(minRandom, maxRandom);
             Console.WriteLine($"Случайное число = {digit}");
-           
-            for (i = startCycle; i < digit; i *= stepCycle)
+
+            for (int i = startCycle; i <= digit; i *= stepCycle)
             {
-                degreeСounter ++;                              
+                degreeСounter++;
             }
 
             Console.WriteLine($"Ваше случайное число {digit} и {baseOfDegree} в степени {degreeСounter}");
-            Console.WriteLine($"конечное Возведеннное в степеь число = {i}");            
+            Console.WriteLine($"конечное Возведеннное в степень число = {i}");
         }
     }
 }
