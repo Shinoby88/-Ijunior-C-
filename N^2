@@ -18,13 +18,13 @@ namespace ConsoleApp46
             Random random = new Random();
             digit = random.Next(minRandom, maxRandom);
             Console.WriteLine($"Случайное число {digit}");
-            int maxCycleValue = digit + digit;
+            int maxCycleValue = digit + digit + 1;
 
             for (int i = startCycle; i < maxCycleValue; i = i * stepCycle)          
             {
                 if (i < maxCycleValue)
                 {
-                    Console.WriteLine($"квадрат двойки равен = {i} степень 2 = {degreeСounter}");
+                    Console.WriteLine($" 2 ^ {degreeСounter} = {i} ");
                     degreeСounter++;
                 }
             }
