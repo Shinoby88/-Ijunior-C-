@@ -9,25 +9,25 @@ namespace ConsoleApp46
             int stepCycle = 2;
             int startCycle = 1;
             int degreeСounter = 0;
-            int minRandom = 0;
+            int minRandom = 1;
             int digit;
-            
+            int baseOfDegree = 2;
+            int i;
+
             Console.Write("Введите максимальное значение диапазона случайного числа = ");
             int maxRandom = Convert.ToInt32(Console.ReadLine());
-            
+
             Random random = new Random();
             digit = random.Next(minRandom, maxRandom);
-            Console.WriteLine($"Случайное число {digit}");
-            int maxCycleValue = digit + digit + 1;
-
-            for (int i = startCycle; i < maxCycleValue; i = i * stepCycle)          
+            Console.WriteLine($"Случайное число = {digit}");
+           
+            for (i = startCycle; i < digit; i *= stepCycle)
             {
-                if (i < maxCycleValue)
-                {
-                    Console.WriteLine($" 2 ^ {degreeСounter} = {i} ");
-                    degreeСounter++;
-                }
+                degreeСounter ++;                              
             }
+
+            Console.WriteLine($"Ваше случайное число {digit} и {baseOfDegree} в степени {degreeСounter}");
+            Console.WriteLine($"конечное Возведеннное в степеь число = {i}");            
         }
     }
 }
