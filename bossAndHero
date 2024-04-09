@@ -1,0 +1,97 @@
+using System;
+
+namespace ConsoleApp10
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            const string EasyAttackHeroCommand = "1";
+            const string FireBallAttacHeroCommand = "2";
+            const string ExplosionHeroCommand = "3";
+            const string DrinkElixirForManaAndLife = "4";
+
+            int healthHero = 200;
+            int healthBoss = 1000;
+            int easyDamageHero = 35;
+            int manaHero = 150;
+            int firebollHero = 200;
+            int explosionHero = 500;
+            int damageBoss = 50;
+            string userInput;
+            int elixirOfYouth = 70;
+            int manaForFirebollHero = 25;
+            int degreeManaForFirebollHero = 0;
+
+
+            Console.WriteLine("Вы - герой и у вас есть несколь умений, которые вы можете использовать против Босса.\n Вы должны уничтожить Босса и тогда будет вам покой");
+            Console.WriteLine("Что думаете предпринять?");
+            Console.WriteLine($"{EasyAttackHeroCommand}. Ударить мечом ");
+            Console.WriteLine($"{FireBallAttacHeroCommand}. Выпустить Огненный шар ");
+            Console.WriteLine($"{ExplosionHeroCommand}. Произвести взрыв (взрыв можно произвести только после огненного шара)");
+            Console.WriteLine($"{DrinkElixirForManaAndLife}. Выпить живительный элексир который восстановит вашу ману и здоровье ");
+
+            while (healthBoss > 0 && healthHero > 0)
+            {
+                Console.Write("Введите выриант развития событий = ");
+                userInput = Console.ReadLine();                
+                
+                switch (userInput)
+                {
+                    case EasyAttackHeroCommand:
+                        Console.WriteLine("Вы наносите удар мечом , Босс бьет вас в ответ");
+                        healthBoss = healthBoss - easyDamageHero;
+                        healthHero = healthHero - damageBoss;
+                        Console.WriteLine($"Жизни у босса осталось = {healthBoss} , количество жизней у героя осталось = {healthHero}");
+                        break;
+
+                    case FireBallAttacHeroCommand:
+                        Console.WriteLine("Вы используете огненный шар , Босс бьет вас в ответ.");
+                        healthBoss = healthBoss - firebollHero;
+                        healthHero = healthHero - damageBoss;
+                        manaHero = manaHero - manaForFirebollHero;
+                        degreeManaForFirebollHero++;
+                        Console.WriteLine($"Количество жизней после файрбола у Босса = {healthBoss}, количество маны у героя = {manaHero} " +
+                            $"\n количество жизней у героя осталось = {healthHero} = {degreeManaForFirebollHero}");
+                        break;
+
+                    case ExplosionHeroCommand:
+                        
+                        if (degreeManaForFirebollHero != 0)
+                        {
+                            healthBoss = healthBoss - explosionHero;
+                            healthHero = healthHero - damageBoss;
+                            Console.WriteLine($"Количество жизней у Босс после взрыва = {healthBoss}, количество жизней у героя осталось = {healthHero}");
+                        }
+                        break;
+
+                    case DrinkElixirForManaAndLife:
+                        healthHero = healthHero + elixirOfYouth;
+                        manaHero = manaHero + elixirOfYouth;
+                        healthHero = healthHero - damageBoss;
+                        Console.WriteLine($"Количество жизней у Босса сейчас = {healthBoss}, количество жизней у героя после приема эликсира = {healthHero}");
+                        break;
+
+                    default:
+                        Console.WriteLine("Вы ошиблись и Босс наносит вам удар");
+                        healthHero = healthHero - damageBoss;
+                        Console.WriteLine($"Жизни у босса осталось = {healthBoss} , количество жизней у героя осталось = {healthHero}, Огреб???)))");
+                        break;
+                }
+
+                if (healthHero<=0 && healthBoss<=0)
+                {
+                    Console.WriteLine(" У нас ничья оба мертвы");
+                }
+                else if (healthHero<=0)
+                {
+                    Console.WriteLine(" Вы пали, Босс отмечает свою победу!!!!");
+                }
+                else if (healthBoss <= 0)
+                {
+                    Console.WriteLine("Босс пал можете ехать домой");
+                }
+            }
+        }   
+    }
+}
