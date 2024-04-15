@@ -9,7 +9,7 @@ namespace ConsoleApp10
             const string EasyAttackHeroCommand = "1";
             const string FireBallAttacHeroCommand = "2";
             const string ExplosionHeroCommand = "3";
-            const string DrinkElixirForManaAndLife = "4";
+            const string DrinkElixirForManaAndLifeCommand = "4";
 
             int healthHero = 200;
             int healthBoss = 1000;
@@ -23,19 +23,18 @@ namespace ConsoleApp10
             int manaForFirebollHero = 25;
             int degreeManaForFirebollHero = 0;
 
-
             Console.WriteLine("Вы - герой и у вас есть несколь умений, которые вы можете использовать против Босса.\n Вы должны уничтожить Босса и тогда будет вам покой");
             Console.WriteLine("Что думаете предпринять?");
             Console.WriteLine($"{EasyAttackHeroCommand}. Ударить мечом ");
             Console.WriteLine($"{FireBallAttacHeroCommand}. Выпустить Огненный шар ");
             Console.WriteLine($"{ExplosionHeroCommand}. Произвести взрыв (взрыв можно произвести только после огненного шара)");
-            Console.WriteLine($"{DrinkElixirForManaAndLife}. Выпить живительный элексир который восстановит вашу ману и здоровье ");
+            Console.WriteLine($"{DrinkElixirForManaAndLifeCommand}. Выпить живительный элексир который восстановит вашу ману и здоровье ");
 
             while (healthBoss > 0 && healthHero > 0)
             {
                 Console.Write("Введите выриант развития событий = ");
-                userInput = Console.ReadLine();                
-                
+                userInput = Console.ReadLine();
+
                 switch (userInput)
                 {
                     case EasyAttackHeroCommand:
@@ -56,7 +55,6 @@ namespace ConsoleApp10
                         break;
 
                     case ExplosionHeroCommand:
-                        
                         if (degreeManaForFirebollHero != 0)
                         {
                             healthBoss = healthBoss - explosionHero;
@@ -65,7 +63,7 @@ namespace ConsoleApp10
                         }
                         break;
 
-                    case DrinkElixirForManaAndLife:
+                    case DrinkElixirForManaAndLifeCommand:
                         healthHero = healthHero + elixirOfYouth;
                         manaHero = manaHero + elixirOfYouth;
                         healthHero = healthHero - damageBoss;
@@ -79,11 +77,11 @@ namespace ConsoleApp10
                         break;
                 }
 
-                if (healthHero<=0 && healthBoss<=0)
+                if (healthHero <= 0 && healthBoss <= 0)
                 {
                     Console.WriteLine(" У нас ничья оба мертвы");
                 }
-                else if (healthHero<=0)
+                else if (healthHero <= 0)
                 {
                     Console.WriteLine(" Вы пали, Босс отмечает свою победу!!!!");
                 }
@@ -92,6 +90,6 @@ namespace ConsoleApp10
                     Console.WriteLine("Босс пал можете ехать домой");
                 }
             }
-        }   
+        }
     }
 }
