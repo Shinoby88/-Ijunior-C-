@@ -51,7 +51,7 @@ namespace ConsoleApp10
                         manaHero = manaHero - manaForFirebollHero;
                         degreeManaForFirebollHero++;
                         Console.WriteLine($"Количество жизней после файрбола у Босса = {healthBoss}, количество маны у героя = {manaHero} " +
-                            $"\n количество жизней у героя осталось = {healthHero} = {degreeManaForFirebollHero}");
+                            $"\n количество жизней у героя осталось = {healthHero}");
                         break;
 
                     case ExplosionHeroCommand:
@@ -75,20 +75,20 @@ namespace ConsoleApp10
                         healthHero = healthHero - damageBoss;
                         Console.WriteLine($"Жизни у босса осталось = {healthBoss} , количество жизней у героя осталось = {healthHero}, Огреб???)))");
                         break;
-                }
-
-                if (healthHero <= 0 && healthBoss <= 0)
-                {
-                    Console.WriteLine(" У нас ничья оба мертвы");
-                }
-                else if (healthHero <= 0)
-                {
-                    Console.WriteLine(" Вы пали, Босс отмечает свою победу!!!!");
-                }
-                else if (healthBoss <= 0)
-                {
-                    Console.WriteLine("Босс пал можете ехать домой");
-                }
+                }                              
+            }
+            
+            if (healthHero <= 0 && healthBoss <= 0)
+            {
+                Console.WriteLine(" У нас ничья оба мертвы");
+            }
+            else if (healthHero <= 0)
+            {
+                Console.WriteLine(" Вы пали, Босс отмечает свою победу!!!!");
+            }
+            else if (healthBoss <= 0)
+            {
+                Console.WriteLine("Босс пал можете ехать домой");
             }
         }
     }
