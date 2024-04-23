@@ -11,6 +11,8 @@ namespace ConsoleApp10
             const string ExplosionHeroCommand = "3";
             const string DrinkElixirForManaAndLifeCommand = "4";
 
+            int maxManaHero = 150;
+            int maxHealthHero = 200;
             int healthHero = 200;
             int healthBoss = 1000;
             int easyDamageHero = 35;
@@ -66,8 +68,33 @@ namespace ConsoleApp10
                     case DrinkElixirForManaAndLifeCommand:
                         healthHero += elixirOfYouth;
                         manaHero += elixirOfYouth;
-                        healthHero -= damageBoss;
-                        Console.WriteLine($"Количество жизней у Босса сейчас = {healthBoss}, количество жизней у героя после приема эликсира = {healthHero}");
+
+                        if (healthHero > maxHealthHero)
+                        {
+                            healthHero = (healthHero + elixirOfYouth) - (healthHero + elixirOfYouth - maxHealthHero);
+                            healthHero -= damageBoss;
+                            Console.WriteLine($"Количество жизней у Босса сейчас = {healthBoss}, количество жизней у героя после приема эликсира = {healthHero}");
+                        }
+
+                        else if (manaHero > maxManaHero)
+                        {
+                            manaHero = (manaHero + elixirOfYouth) - (manaHero + elixirOfYouth - maxManaHero);
+                            healthHero -= damageBoss;
+                            Console.WriteLine($"Количество жизней у Босса сейчас = {healthBoss}, количество жизней у героя после приема эликсира = {healthHero} и количество маны {manaHero}");
+                        }
+
+                        else if (healthHero > maxHealthHero && manaHero > maxManaHero)
+                        {
+                            healthHero = (healthHero + elixirOfYouth) - (healthHero + elixirOfYouth - maxHealthHero);
+                            manaHero = (manaHero + elixirOfYouth) - (manaHero + elixirOfYouth - maxManaHero);
+                            healthHero -= damageBoss;
+                            Console.WriteLine($"Количество жизней у Босса сейчас = {healthBoss}, количество жизней у героя после приема эликсира = {healthHero} и количество маны {manaHero}");
+                        }
+                        
+                        else
+                        {
+                            Console.WriteLine($"Количество жизней у Босса сейчас = {healthBoss}, количество жизней у героя после приема эликсира = {healthHero} и количество маны {manaHero}");
+                        }
                         break;
 
                     default:
@@ -75,7 +102,7 @@ namespace ConsoleApp10
                         healthHero = healthHero - damageBoss;
                         Console.WriteLine($"Жизни у босса осталось = {healthBoss} , количество жизней у героя осталось = {healthHero}, Огреб???)))");
                         break;
-                }                              
+                }
             }
             if (healthHero <= 0 && healthBoss <= 0)
             {
