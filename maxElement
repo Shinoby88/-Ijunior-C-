@@ -8,48 +8,47 @@ namespace ConsoleApp62
         {
             int maxValue = int.MinValue;
             int maxRow = 0;
-            int maxCol = 0;  
-            int[,] array10 = new int[10, 10];
+            int maxCol = 0;
+            int maxRand = 10;
+            int minRand = 0;
+            int[,] array = new int[10, 10];
             
             Random rand = new Random();
 
-            for (int i = 0; i < array10.GetLength(0); i++)
+            for (int i = 0; i < array.GetLength(0); i++)
             {
-                for (int j = 0; j < array10.GetLength(1); j++)
+                for (int j = 0; j < array.GetLength(1); j++)
                 {
-                    array10[i, j] = rand.Next(0, 10);
-                    Console.Write(array10[i, j] + " ");
+                    array[i, j] = rand.Next(minRand, maxRand);
+                    Console.Write(array[i, j] + " ");
 
                 }
                 Console.WriteLine();              
             }
             
-
-            for (int i = 0; i < array10.GetLength(0); i++)
+            for (int i = 0; i < array.GetLength(0); i++)
             {
-                for (int j = 0; j < array10.GetLength(1); j++)
+                for (int j = 0; j < array.GetLength(1); j++)
                 {
-                    if (array10[i, j] > maxValue)
+                    if (array[i, j] > maxValue)
                     {
-                        maxValue = array10[i, j];
+                        maxValue = array[i, j];
                         maxRow = i;
                         maxCol = j;
                     }
                 }
             }
             Console.WriteLine($"Максимальный элемент: {maxValue} (позиция: {maxRow}, {maxCol})");
-            array10[maxRow, maxCol] = 0;
+            array[maxRow, maxCol] = 0;
             Console.WriteLine("Массив после замены максимального элемента на 0:");
-            for (int i = 0; i < array10.GetLength(0); i++)
+            for (int i = 0; i < array.GetLength(0); i++)
             {
-                for (int j = 0; j < array10.GetLength(1); j++)
+                for (int j = 0; j < array.GetLength(1); j++)
                 {
-                    Console.Write(array10[i, j] + " ");
+                    Console.Write(array[i, j] + " ");
                 }
                 Console.WriteLine();
             }
-
-
         }
     }
 }
