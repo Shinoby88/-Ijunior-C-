@@ -1,0 +1,55 @@
+using System;
+
+namespace ConsoleApp62
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            int maxValue = int.MinValue;
+            int maxRow = 0;
+            int maxCol = 0;  
+            int[,] array10 = new int[10, 10];
+            
+            Random rand = new Random();
+
+            for (int i = 0; i < array10.GetLength(0); i++)
+            {
+                for (int j = 0; j < array10.GetLength(1); j++)
+                {
+                    array10[i, j] = rand.Next(0, 10);
+                    Console.Write(array10[i, j] + " ");
+
+                }
+                Console.WriteLine();              
+            }
+            
+
+            for (int i = 0; i < array10.GetLength(0); i++)
+            {
+                for (int j = 0; j < array10.GetLength(1); j++)
+                {
+                    if (array10[i, j] > maxValue)
+                    {
+                        maxValue = array10[i, j];
+                        maxRow = i;
+                        maxCol = j;
+                    }
+                }
+            }
+            Console.WriteLine($"Максимальный элемент: {maxValue} (позиция: {maxRow}, {maxCol})");
+            array10[maxRow, maxCol] = 0;
+            Console.WriteLine("Массив после замены максимального элемента на 0:");
+            for (int i = 0; i < array10.GetLength(0); i++)
+            {
+                for (int j = 0; j < array10.GetLength(1); j++)
+                {
+                    Console.Write(array10[i, j] + " ");
+                }
+                Console.WriteLine();
+            }
+
+
+        }
+    }
+}
