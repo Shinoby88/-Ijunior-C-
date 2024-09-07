@@ -7,12 +7,10 @@ namespace ConsoleApp62
         static void Main(string[] args)
         {
             int maxValue = int.MinValue;
-            int maxRow = 0;
-            int maxCol = 0;
             int maxRand = 10;
             int minRand = 0;
+
             int[,] array = new int[10, 10];
-            
             Random rand = new Random();
 
             for (int i = 0; i < array.GetLength(0); i++)
@@ -21,11 +19,10 @@ namespace ConsoleApp62
                 {
                     array[i, j] = rand.Next(minRand, maxRand);
                     Console.Write(array[i, j] + " ");
-
                 }
-                Console.WriteLine();              
+                Console.WriteLine();
             }
-            
+
             for (int i = 0; i < array.GetLength(0); i++)
             {
                 for (int j = 0; j < array.GetLength(1); j++)
@@ -33,14 +30,24 @@ namespace ConsoleApp62
                     if (array[i, j] > maxValue)
                     {
                         maxValue = array[i, j];
-                        maxRow = i;
-                        maxCol = j;
                     }
                 }
             }
-            Console.WriteLine($"Максимальный элемент: {maxValue} (позиция: {maxRow}, {maxCol})");
-            array[maxRow, maxCol] = 0;
-            Console.WriteLine("Массив после замены максимального элемента на 0:");
+
+            Console.WriteLine($"Максимальный элемент: {maxValue}");
+                        
+            for (int i = 0; i < array.GetLength(0); i++)
+            {
+                for (int j = 0; j < array.GetLength(1); j++)
+                {
+                    if (array[i, j] == maxValue)
+                    {
+                        array[i, j] = 0;
+                    }
+                }
+            }
+
+            Console.WriteLine("Массив после замены максимальных элементов на 0:");
             for (int i = 0; i < array.GetLength(0); i++)
             {
                 for (int j = 0; j < array.GetLength(1); j++)
