@@ -9,9 +9,9 @@ namespace ConsoleApp62
             int maxValue = int.MinValue;
             int maxRandom = 10;
             int minRandom = 0;
-            int rewritingElement = 0;
+            int valueToReplace = 0;
 
-            int[,] array = new int[10, 10];
+            int[,] array = new int [10, 10]; /// здесь не понимаю что нужно?
             Random random = new Random();
 
             for (int i = 0; i < array.GetLength(0); i++)
@@ -44,12 +44,12 @@ namespace ConsoleApp62
                 {
                     if (array[i, j] == maxValue)
                     {
-                        array[i, j] = rewritingElement;
+                        array[i, j] = valueToReplace;
                     }
                 }
             }
 
-            Console.WriteLine($"Массив после замены максимальных элементов на {rewritingElement}:");
+            Console.WriteLine($"Массив после замены максимальных элементов на {valueToReplace}:");
             
             for (int i = 0; i < array.GetLength(0); i++)
             {
