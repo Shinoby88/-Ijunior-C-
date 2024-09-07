@@ -9,16 +9,16 @@ namespace ConsoleApp62
             int maxValue = int.MinValue;
             int maxRandom = 10;
             int minRandom = 0;
-            int newElement = 0;
+            int newElementInMassive = 0;
 
             int[,] array = new int[10, 10];
-            Random rand = new Random();
+            Random random = new Random();
 
             for (int i = 0; i < array.GetLength(0); i++)
             {
                 for (int j = 0; j < array.GetLength(1); j++)
                 {
-                    array[i, j] = rand.Next(minRandom, maxRandom);
+                    array[i, j] = random.Next(minRandom, maxRandom);
                     Console.Write(array[i, j] + " ");
                 }
 
@@ -44,12 +44,12 @@ namespace ConsoleApp62
                 {
                     if (array[i, j] == maxValue)
                     {
-                        array[i, j] = newElement;
+                        array[i, j] = newElementInMassive;
                     }
                 }
             }
 
-            Console.WriteLine("Массив после замены максимальных элементов на 0:");
+            Console.WriteLine($"Массив после замены максимальных элементов на {newElementInMassive}:");
             
             for (int i = 0; i < array.GetLength(0); i++)
             {
