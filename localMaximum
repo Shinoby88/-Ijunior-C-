@@ -8,12 +8,12 @@ namespace ConsoleApp63
         {
             int minElementArray = 0;
             int maxElementArray = 10;
-            Console.Write("Введите количество елементов массива = ");
-            int numbersOfElements = Convert.ToInt32(Console.ReadLine());  
+            Console.Write("Введите количество элементов массива = ");
+            int numbersOfElements = Convert.ToInt32(Console.ReadLine());
             int[] array = new int[numbersOfElements];
             Random random = new Random();
 
-            for (int i = 0; i < array.Length ; i++)
+            for (int i = 0; i < array.Length; i++)
             {
                 array[i] = random.Next(minElementArray, maxElementArray);
                 Console.Write(array[i] + " ");
@@ -25,23 +25,25 @@ namespace ConsoleApp63
                 Console.WriteLine($"Локальный максимум найден: {array[0]} на индексе 0");
             }
             
-            for (int i = 0; i < array.Length; i++)
+            for (int i = 1; i < numbersOfElements - 1; i++)
             {
-                if (i == 0)
+                if (array[i] > array[i - 1] && array[i] > array[i + 1])
                 {
-                    if (array[i] > array[i+1])
-                    {
-                        Console.WriteLine($"Локальный максимум найден: {array[i]} на индексе {i}");
-                    }
+                    Console.WriteLine($"Локальный максимум найден: {array[i]} на индексе {i}");
                 }
-                else if (i == array.Length - 1)
-                {
-                    if (array[i] > array[i-1])
-                    {
-                        Console.WriteLine($"Локальный максимум найден: {array[i]} на индексе {i}");
-                    }
-                }                
             }
-        }    
+            
+            if (numbersOfElements > 1 && array[numbersOfElements - 1] > array[numbersOfElements - 2])
+            {
+                Console.WriteLine($"Локальный максимум найден: {array[numbersOfElements - 1]} на индексе {numbersOfElements - 1}");
+            }
+            
+            if (numbersOfElements == 1)
+            {
+                Console.WriteLine($"Единственный элемент: {array[0]} — это локальный максимум.");
+            }
+        }
     }
 }
+
+
