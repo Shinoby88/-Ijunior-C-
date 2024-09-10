@@ -20,6 +20,11 @@ namespace ConsoleApp63
             }
             Console.WriteLine();
 
+            if (numbersOfElements > 1 && array[0] > array[1])
+            {
+                Console.WriteLine($"Локальный максимум найден: {array[0]} на индексе 0");
+            }
+            
             for (int i = 0; i < array.Length; i++)
             {
                 if (i == 0)
@@ -35,14 +40,7 @@ namespace ConsoleApp63
                     {
                         Console.WriteLine($"Локальный максимум найден: {array[i]} на индексе {i}");
                     }
-                }
-                else
-                {
-                    if (array[i] > array[i-1]&& array[i] > array[i+1])
-                    {
-                        Console.WriteLine($"Локальный максимум найден: {array[i]} на индексе {i}");
-                    }
-                }
+                }                
             }
         }    
     }
