@@ -1,0 +1,56 @@
+using System;
+
+namespace ConsoleApp65
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            int lengthArray = 0;
+            int[] numbers = new int[lengthArray];
+            int arraySum = 0;
+
+            while (true)
+            {
+                Console.WriteLine($"Введите число, exit или sum: ");
+                string input = Console.ReadLine();
+
+                if (input == "exit")
+                {
+                    break;
+                }
+
+                if (input == "sum")
+                {
+                    for (int i = 0; i < numbers.Length; i++)
+                    {
+                        arraySum += numbers[i];
+                    }
+                    Console.WriteLine($"Сумма массива: {arraySum}");
+                    arraySum = 0;
+                }
+                else
+                {
+                    if (int.TryParse(input, out int number))
+                    {
+
+                        int[] tempArray = new int[lengthArray + 1];
+
+                        for (int i = 0; i < lengthArray; i++)
+                        {
+                            tempArray[i] = numbers[i];
+                        }
+
+                        tempArray[lengthArray] = number;
+                        numbers = tempArray;
+                        lengthArray++;
+                    }
+                    else
+                    {
+                        Console.WriteLine($"Пожалуйста, введите корректное число.");
+                    }
+                }
+            }
+        }
+    }
+}
