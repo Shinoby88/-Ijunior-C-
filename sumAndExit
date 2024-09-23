@@ -1,6 +1,6 @@
 using System;
 
-namespace ConsoleApp65
+namespace ConsoleApp27
 {
     internal class Program
     {
@@ -9,48 +9,47 @@ namespace ConsoleApp65
             int lengthArray = 0;
             int[] numbers = new int[lengthArray];
             int arraySum = 0;
+            const string CommandExit = "exit";
+            const string CommandSum = "Sum";
+            string userInput = " ";
 
-            while (true)
+            while (userInput != CommandExit)
             {
-                Console.WriteLine($"Введите число, exit или sum: ");
-                string input = Console.ReadLine();
+                Console.Write($"Введите число, {CommandExit} или {CommandSum} = ");
+                userInput = Console.ReadLine();
 
-                if (input == "exit")
+                switch(userInput)
                 {
-                    break;
-                }
+                    case CommandExit:
+                        Console.WriteLine("Вышли из программы");
+                        break;
+                    
+                    case CommandSum:
 
-                if (input == "sum")
-                {
-                    for (int i = 0; i < numbers.Length; i++)
-                    {
-                        arraySum += numbers[i];
-                    }
-                    Console.WriteLine($"Сумма массива: {arraySum}");
-                    arraySum = 0;
-                }
-                else
-                {
-                    if (int.TryParse(input, out int number))
-                    {
-
-                        int[] tempArray = new int[lengthArray + 1];
-
-                        for (int i = 0; i < lengthArray; i++)
+                        for (int i = 0; i < numbers.Length; i++)
                         {
-                            tempArray[i] = numbers[i];
+                            arraySum += numbers[i];
                         }
+                        Console.WriteLine($"Сумма массива : {arraySum} ");
+                        arraySum = 0;
+                        break;
+                    
+                    default:
+                        if (int.TryParse(userInput, out int number))
+                        {
+                            int[] tempArray = new int[lengthArray + 1];
 
-                        tempArray[lengthArray] = number;
-                        numbers = tempArray;
-                        lengthArray++;
-                    }
-                    else
-                    {
-                        Console.WriteLine($"Пожалуйста, введите корректное число.");
-                    }
+                            for (int i = 0; i < lengthArray; i++)
+                            {
+                                tempArray[i] = numbers[i];
+                            }
+                            tempArray[lengthArray] = number;
+                            numbers = tempArray;
+                            lengthArray++;
+                        }
+                        break;
                 }
-            }
+            }                
         }
     }
 }
