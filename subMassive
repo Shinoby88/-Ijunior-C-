@@ -20,14 +20,12 @@ namespace ConsoleApp67
             
             for (int i = 1; i < numbers.Length; i++)
             {
-                
                 if (numbers[i] == currentNumber)
                 {
                     currentCount++; 
                 }
                 else
                 {
-                   
                     if (currentCount > maxCount)
                     {
                         maxCount = currentCount; 
