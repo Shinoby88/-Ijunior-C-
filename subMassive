@@ -20,21 +20,28 @@ namespace ConsoleApp67
             
             for (int i = 1; i < numbers.Length; i++)
             {
+                
                 if (numbers[i] == currentNumber)
                 {
-                    currentCount++; 
-                }
-                else
-                {
+                    currentCount++;
+
                     if (currentCount > maxCount)
                     {
-                        maxCount = currentCount; 
-                        mostFrequentNumber = currentNumber; 
+                        maxCount = currentCount;
+                        mostFrequentNumber = currentNumber;
                     }
-                    
+
+                    currentNumber = numbers[i];
+                    currentCount = 1; if (currentCount > maxCount)
+                    {
+                        maxCount = currentCount;
+                        mostFrequentNumber = currentNumber;
+                    }
+
                     currentNumber = numbers[i];
                     currentCount = 1;
                 }
+                ////Не знаю запутался(((
             }
 
             if (currentCount > maxCount)
