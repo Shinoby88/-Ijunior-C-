@@ -17,14 +17,17 @@ namespace ConsoleApp67
             {
                 Console.Write(numbers[i] + " ");
             }
+
             for (int i = 1; i < numbers.Length; i++)
             {
+
                 if (numbers[i] == currentNumber)
                 {
                     currentCount++;
                 }
                 else
                 {
+
                     if (currentCount > maxCount)
                     {
                         maxCount = currentCount;
