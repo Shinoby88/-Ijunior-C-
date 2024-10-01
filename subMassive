@@ -6,19 +6,19 @@ namespace ConsoleApp67
     {
         static void Main(string[] args)
         {
-            
+
             int[] numbers = { 5, 5, 5, 3, 3, 3, 3, 9, 9, 9, 5, 5 };
-            int maxCount = 1; 
-            int currentCount = 1; 
+            int maxCount = 1;
+            int currentCount = 1;
             int mostFrequentNumber = numbers[0];
             int currentNumber = numbers[0];
 
-            for (int i = 0; i < numbers.GetLength(0); i ++)
+            for (int i = 0; i < numbers.GetLength(0); i++)
             {
                 Console.Write(numbers[i] + " ");
             }
 
-            for (int i = 1; i < numbers.Length; i++)
+            for (int i = 0; i < numbers.Length; i++)
             {
 
                 if (numbers[i] == currentNumber)
@@ -37,12 +37,7 @@ namespace ConsoleApp67
                     currentCount = 1;
                 }
             }
-
-            if (currentCount > maxCount)
-            {
-                maxCount = currentCount;
-                mostFrequentNumber = currentNumber;
-            }
+                        
             Console.WriteLine($"Число {mostFrequentNumber} повторяется {maxCount} раз(а) подряд.");
         }
     }
