@@ -1,0 +1,19 @@
+using System;
+
+namespace ConsoleApp71
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            string message = "You will die immortals";
+
+            string[] subs = message.Split(' ');
+
+            foreach (var sub in subs)
+            {
+                Console.WriteLine($"Substring: {sub}");
+            }
+        }
+    }
+}
