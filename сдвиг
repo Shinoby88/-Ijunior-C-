@@ -1,35 +1,42 @@
 using System;
 
-class Program
+namespace ConsoleApp81
 {
-    static void Main(string[] args)
+    internal class Program
     {
-        int[] array = { 1, 2, 3, 4 };
-        int shiftPositions = 1;
-        int n = array.Length;
-        shiftPositions %= n;
-
-        for (int i = 0; i < shiftPositions / 2; i++)
+        static void Main(string[] args)
         {
-            int temp = array[i];
-            array[i] = array[shiftPositions - i - 1];
-            array[shiftPositions - i - 1] = temp;
-        }
+            int[] array = { 1, 2, 3, 4 };
+            string userInput;
+            int numberOfShifts;
+            int tempNumber;
 
-        for (int i = shiftPositions; i < (n + shiftPositions) / 2; i++)
-        {
-            int temp = array[i];
-            array[i] = array[n - i + shiftPositions - 1];
-            array[n - i + shiftPositions - 1] = temp;
-        }
+            for (int i = 1; i <= array.Length; i++)
+            {
+                Console.Write($"{i} ");
+            }
 
-        for (int i = 0; i < n / 2; i++)
-        {
-            int temp = array[i];
-            array[i] = array[n - i - 1];
-            array[n - i - 1] = temp;
-        }
+            Console.WriteLine("\nНа сколько сдвинуть значения в массиве?");
+            userInput = Console.ReadLine();
 
-        Console.WriteLine( array); 
+            numberOfShifts = Convert.ToInt32(userInput) % array.Length;
+
+            for (int i = 0; i < numberOfShifts; i++)
+            {
+                for (int j = 0; j < array.Length - 1; j++)
+                {
+                    tempNumber = array[j];
+                    array[j] = array[j + 1];
+                    array[j + 1] = tempNumber;
+                }
+            }
+
+            Console.WriteLine();
+
+            foreach (var number in array)
+            {
+                Console.Write($"{number} ");
+            }
+        }
     }
 }
