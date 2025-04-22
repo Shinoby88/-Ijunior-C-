@@ -1,0 +1,52 @@
+using System;
+
+namespace theBracketProgram
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            int counterForOpeningBrackets = 0; 
+            int closingParenthesisCounter = 0; 
+            int maxDepth = 0; 
+            int depth = 0;
+            string text = " ";
+            bool isCorrect = true; 
+            Console.Write("Введите строку из скобок: ");
+            text = Console.ReadLine(); 
+
+            for (int i = 0; i < text.Length; i++)
+            {
+                if (text[i] == '(') 
+                {
+                    counterForOpeningBrackets++; 
+                    depth++; 
+                    
+                    if (depth > maxDepth)
+                    {
+                        maxDepth = depth; 
+                    }
+                }
+                else if (text[i] == ')') 
+                {
+                    closingParenthesisCounter++; 
+                    depth--; 
+                    
+                    if (depth < 0)
+                    {
+                        isCorrect = false; 
+                    }
+                }
+            }
+
+            if (depth == 0 && isCorrect) 
+            {
+                Console.WriteLine($"Выражение корректное, максимальная глубина равна {maxDepth}"); 
+            }
+            else 
+            {
+                Console.WriteLine($"Выражение некорректное."); 
+            }                        
+        }
+    }
+}
