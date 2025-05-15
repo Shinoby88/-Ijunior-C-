@@ -6,19 +6,20 @@ namespace ConsoleApp139
     {
         static void Main(string[] args)
         {
-            int digital = ReafInt();
+            int digital = ReadInt();
             Console.WriteLine($"Ваше конвертированное число {digital}");
         }
 
-        static int ReafInt()
+        static int ReadInt()
         {
             int parsedInteger;
             Console.Write("Введите строку = ");
 
-            while (!int.TryParse(Console.ReadLine(), out parsedInteger))
+            while (true != int.TryParse(Console.ReadLine(), out parsedInteger))
             {
                 Console.WriteLine("Число не конвертировалось попробуйте еще раз. ");
             }
+
             return parsedInteger;
         }
     }
