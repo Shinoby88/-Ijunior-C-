@@ -1,0 +1,31 @@
+using System;
+
+namespace ConsoleApp139
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            int digital = GetParsedInteger();
+            Console.WriteLine($"Ваше конвертированное число {digital}");           
+        }
+        static int GetParsedInteger()
+        {
+            while (true)
+            {
+                Console.Write("Введите строку = ");
+                string userInput = Console.ReadLine();
+                int parsedInteger;
+
+                if (int.TryParse(userInput, out parsedInteger))
+                {
+                    return parsedInteger;
+                }
+                else
+                {
+                    Console.WriteLine("Число не конвертировалось попробуйте еще раз. ");
+                }
+            }
+        }
+    }
+}
