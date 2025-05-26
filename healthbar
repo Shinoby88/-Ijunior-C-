@@ -10,8 +10,9 @@ namespace HealthBar
             int maxHealth = 10;
             int mana = 7;
             int maxMana = 10;
+            bool inputNext = true;
 
-            while (true)
+            while (inputNext)
             {
                 DrawBar(health, maxHealth, ConsoleColor.Red, 0, '|');
                 DrawBar(mana, maxMana, ConsoleColor.Blue, 1);
