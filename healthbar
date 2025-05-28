@@ -1,4 +1,5 @@
 using System;
+using System.Threading;
 
 namespace HealthBar
 {
@@ -10,9 +11,9 @@ namespace HealthBar
             int maxHealth = 10;
             int mana = 7;
             int maxMana = 10;
-            bool inputNext = true;
+            int count = 0;
 
-            while (inputNext)
+            for (int i = 0; i <= 1; i++)
             {
                 DrawBar(health, maxHealth, ConsoleColor.Red, 0, '|');
                 DrawBar(mana, maxMana, ConsoleColor.Blue, 1);
@@ -21,8 +22,9 @@ namespace HealthBar
                 health += Convert.ToInt32(Console.ReadLine());
                 Console.Write("Введите число, на которе измениться мана: ");
                 mana += Convert.ToInt32(Console.ReadLine());
-                Console.ReadKey();
                 Console.Clear();
+                count++;
+                continue;
             }
         }
 
