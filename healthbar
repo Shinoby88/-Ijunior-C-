@@ -1,7 +1,7 @@
 using System;
-using System.Threading;
+using System.Threading.Tasks;
 
-namespace HealthBar
+namespace ConsoleApp127
 {
     internal class Program
     {
@@ -11,46 +11,43 @@ namespace HealthBar
             int maxHealth = 10;
             int mana = 7;
             int maxMana = 10;
-            int count = 0;
-
-            for (int i = 0; i <= 1; i++)
+                        
+            while (true)
             {
-                DrawBar(health, maxHealth, ConsoleColor.Red, 0, '|');
+                DrawBar(health, maxHealth, ConsoleColor.Green, 0);
                 DrawBar(mana, maxMana, ConsoleColor.Blue, 1);
+
                 Console.SetCursorPosition(0, 5);
-                Console.Write(" Введите число, на которое измениться жизнь: ");
+                Console.Write("Введите число, на которое измениться жизнь: ");
                 health += Convert.ToInt32(Console.ReadLine());
-                Console.Write("Введите число, на которе измениться мана: ");
+                Console.Write("Введите число на которое измениться мана: ");
                 mana += Convert.ToInt32(Console.ReadLine());
+                Console.ReadKey();
                 Console.Clear();
-                count++;
-                continue;
             }
         }
-
-        static void DrawBar(int value, int maxValue, ConsoleColor color, int position, char symbol = '_')
+        //Вернулся к исходному варианту
+        static void DrawBar(int value, int maxValue, ConsoleColor color, int position, char symbol = '#')
         {
-            ConsoleColor defaultColor = Console.BackgroundColor;
             string bar = "";
 
-            for (int i = 0; i < value; i++)
+            for (int i =0; i<value; i++)
             {
-                bar += symbol;
+                bar += " ";
             }
 
             Console.SetCursorPosition(0, position);
             Console.Write('[');
             Console.BackgroundColor = color;
-            Console.Write(bar);
-            Console.BackgroundColor = defaultColor;
+            Console.WriteLine(bar);
+            Console.BackgroundColor = default;
 
             bar = "";
 
             for (int i = value; i < maxValue; i++)
             {
-                bar += symbol;
+                bar += " ";
             }
-
             Console.Write(bar + ']');
         }
     }
