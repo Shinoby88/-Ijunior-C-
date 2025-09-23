@@ -1,0 +1,41 @@
+using System;
+
+namespace ConsoleApp127
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            int health = 5;
+            int maxHealth = 10;
+            int mana = 7;
+            int maxMana = 10;           
+            
+            DrawBar(health, maxHealth, ConsoleColor.Green, 0);
+            DrawBar(mana, maxMana, ConsoleColor.Blue, 1);                       
+        }
+        static void DrawBar(int value, int maxValue, ConsoleColor color, int position, char symbol = '#')
+        {
+            string bar = "";
+
+            for (int i = 0; i < value; i++)
+            {
+                bar += " ";
+            }
+
+            Console.SetCursorPosition(0, position);
+            Console.Write('[');
+            Console.BackgroundColor = color;
+            Console.Write(bar);
+            Console.BackgroundColor = default;
+
+            bar = "";
+
+            for (int i = value; i < maxValue; i++)
+            {
+                bar += " ";
+            }
+            Console.Write(bar + ']');
+        }        
+    }
+}
