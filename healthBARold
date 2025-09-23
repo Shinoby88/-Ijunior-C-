@@ -1,6 +1,6 @@
 using System;
 
-namespace ConsoleApp127
+namespace HealthBar
 {
     internal class Program
     {
