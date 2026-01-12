@@ -6,30 +6,45 @@ namespace HealtBar
     {
         static void Main(string[] args)
         {
-            int health = 5;
-            int startBar = 0;
-            int healthMax = 10;
-            string symbolHealth = "#";
-            string symbol = "_";
-            string startSymbol = "[";
-            string endSymbol = "]";
-            string voidSymbol = "";
+            int health = 80;
+            int lenght = 20;
+            int mana = 35;
+            string healthSymbol = "H";
+            string emptySymbol = "_";
+            string manaSymbol = "M";
 
-            DrawCircleBar(startBar, health, symbolHealth, startSymbol, voidSymbol);
-            DrawCircleBar(health, healthMax, symbol, voidSymbol, endSymbol);
+            DrawBar(health, lenght, healthSymbol, emptySymbol);
+            DrawBar(mana, lenght, manaSymbol, emptySymbol);
         }
 
-        static void DrawCircleBar(int value, int valueMax, string symbolsInBar, string symbolsOne, string symbolsTwo)
+        static void DrawBar(int health, int lenght, string symbolHealth, string emptySymbol)
+        {
+            int maxPercent = 100;
+            string startSymbol = "[";
+            string endSymbol = "]";
+
+            if (health > maxPercent)
+            {
+                health = maxPercent;
+            }
+
+            int filledCell = (health * lenght) / maxPercent;
+            string bar = FillBar(filledCell, symbolHealth);
+            bar += FillBar(lenght - filledCell, emptySymbol);
+            Console.WriteLine($"{startSymbol}{bar}{endSymbol}");
+        }
+
+        static string FillBar(int value, string symbolsInBar)
         {
             string bar = "";
 
-            for (int i = value; i < valueMax; i++)
+            for (int i = 0; i < value; i++)
             {
-                bar = bar + symbolsInBar;
+                bar += symbolsInBar;
             }
-            Console.Write(symbolsOne + bar + symbolsTwo);
-        }
 
+            return bar;
+        }    
 
     }
 }
