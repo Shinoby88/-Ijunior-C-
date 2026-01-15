@@ -6,26 +6,26 @@ namespace ConsoleApp17
     {
         static void Main(string[] args)
         {
-            int[] array = { 1, 2, 3, 4, 5, 6 };        
-            Shuffle(array);      
+            int[] digitals = { 1, 2, 3, 4, 5, 6 };        
+            Shuffle(digitals);
+            
+            foreach (int item in digitals)
+            {
+                Console.Write(item + " ");
+            }
         }
         public static void Shuffle(int[] array)
         {
             int lenghtArray = array.Length;
-            Random rnd = new Random();
+            Random random = new Random();
 
             for (int i = lenghtArray - 1; i > 0; i--)
             {                
-                int j = rnd.Next(0, lenghtArray);
+                int offsetIndex = random.Next(0, lenghtArray);
                 int temp = array[i];
-                array[i] = array[j];
-                array[j] = temp;
-            }
-
-            foreach (int item in array)
-            {
-                Console.Write(item + " ");
-            }
+                array[i] = array[offsetIndex];
+                array[offsetIndex] = temp;
+            }          
         }
     }
 }
